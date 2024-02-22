@@ -15,6 +15,10 @@ app.add_middleware(
 async def root():
     return {"message": "You have reached the root route"}
 
-@app.get("/api/")
+@app.get("/api")
 async def root_api():
     return {"message": "Welcome to FastAPI API"}
+
+@app.get("/api/items")
+async def read_items():
+    return [{"name": "Item One"}, {"name": "Item Two"}]
